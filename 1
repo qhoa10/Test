@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main () {
+    int n, max=0; // Khai bao bien so nguyen n, max=0
+    scanf("%d", &n); // Nhap so nguyen n
+     int A[n]; // Khai bao mang A gom n phan tu kieu nguyen 
+     for(int i=0;i<n;++i){ // Su dung vong lap for de nhap cac phan tu mang A
+            scanf("%d", &A[i]);
+        }
+    if(n==1) { // Neu mang chi co 1 phan tu, in ra 0
+        printf("0"); return 0;
+    }
+    if((n>=2)&&(n<=10)){ // Neu mang co n phan tu thoa man 2<=n<=10
+        for(int i=0;i<n-1;i++){ // Su dung vong lap for de tim tong 2 phan tu lien tiep lon nhat cua mang A
+            if(max<A[i]+A[i+1]){ //Neu max < A[i]+A[i+1]
+                max=A[i]+A[i+1]; // Gan max =A[i]+A[i+1]
+            }
+        }
+   }
+        printf("%d", max); //In ra man hinh tong 2 phan tu lien tiep lon nhat cua mang
+        if (max<0) { // Neu max <0
+            max=0; // Gan max=0
+        }
+    return 0;
+}
